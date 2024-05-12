@@ -1,0 +1,19 @@
+name = "Planting Guide Extension"
+scopes = "read_products, read_themes"
+port = 8080 
+
+[development]
+  // Use ngrok to expose your local development server to Shopify
+  [[development.resource]]
+    url = "https://*.ngrok.io"
+
+[commands]
+  [commands.serve]
+    command = "npm run dev"
+
+[build]
+  command = "npm run build"
+  env = ["NODE_ENV=production"]
+
+[env]
+  API_KEY = { required = true } // Set your actual API key during deploymen
